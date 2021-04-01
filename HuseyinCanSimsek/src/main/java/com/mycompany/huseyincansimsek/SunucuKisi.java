@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 public class SunucuKisi extends HttpServlet{
-    public void doGet (HttpServletRequest istek,HttpServletResponse yanit) throws IOException,ServletException
+    public void doGet (HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
     {
-        String istekURL=istek.getRequestURI();
+        String istekURL=request.getRequestURI();
       
         String ad=istekURL.substring("/Adı/".length());
         DataStore sd=new DataStore();
@@ -32,24 +32,24 @@ public class SunucuKisi extends HttpServlet{
             gonder +="Eposta: " + JSONObject.quote(kisiler.getEposta()) + ",\n";
             gonder += "Sifre:" + JSONObject.quote(kisiler.getSifre()) + ",\n";
             gonder += "dogumYili:" + JSONObject.quote(kisiler.getdogumYili() + ",\n");
-            yanit.getOutputStream().println(gonder);
+            response.getOutputStream().println(gonder);
             
         }
         else
         {
-            yanit.getOutputStream().println("{}");
+            response.getOutputStream().println("{}");
         }
         
         
        
     }
-    public void doPost(HttpServletRequest istek,HttpServletResponse yanit) throws IOException,ServletException
+    public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
     {
-        String ad=istek.getParameter("Adı");
-        String kullaniciAdi=istek.getParameter("Kullanıcı Adı");
-        String eposta=istek.getParameter("E Posta");
-        String sifre=istek.getParameter("Şifre");
-        String dogumYili=istek.getParameter("Doğum Yılı");
+        String ad=request.getParameter("Adı");
+        String kullaniciAdi=request.getParameter("Kullanıcı Adı");
+        String eposta=request.getParameter("E Posta");
+        String sifre=request.getParameter("Şifre");
+        String dogumYili=request.getParameter("Doğum Yılı");
         DataStore a =new DataStore();
        a.settKisi(new kisi(ad,kullaniciAdi,eposta,sifre,dogumYili));
     }
