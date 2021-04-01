@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 public class SunucuKisi extends HttpServlet{
-    public void al(HttpServletRequest istek,HttpServletResponse yanit) throws IOException,ServletException
+    public void doGet (HttpServletRequest istek,HttpServletResponse yanit) throws IOException,ServletException
     {
         String istekURL=istek.getRequestURI();
       
@@ -43,7 +43,7 @@ public class SunucuKisi extends HttpServlet{
         
        
     }
-    public void ver(HttpServletRequest istek,HttpServletResponse yanit) throws IOException,ServletException
+    public void doPost(HttpServletRequest istek,HttpServletResponse yanit) throws IOException,ServletException
     {
         String ad=istek.getParameter("Adı");
         String kullaniciAdi=istek.getParameter("Kullanıcı Adı");
