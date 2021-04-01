@@ -61,9 +61,9 @@ public class auth {
         
         
     }
-    public static String getKisiVerisi(String ad) throws IOException{
+    public static String getPersonData(String ad) throws IOException{
 
-		HttpURLConnection connection = (HttpURLConnection) new URL("http://localhost:3000" + ad).openConnection();
+		HttpURLConnection connection = (HttpURLConnection) new URL("http://localhost:8080/HuseyinCanSimsek" + ad).openConnection();
 		
 		connection.setRequestMethod("GET");
 
@@ -83,7 +83,7 @@ public class auth {
 		// an error happened
 		return null;
 	}
-    public static void setKisiVerisi(String ad, String kullaniciAdi, String Eposta,String Sifre,String dogumYili) throws IOException{
+    public static void setPersonData(String ad, String kullaniciAdi, String Eposta,String Sifre,String dogumYili) throws IOException{
 		HttpURLConnection baglanti = (HttpURLConnection) new URL("http://localhost:3000" + ad).openConnection();
 
 		baglanti.setRequestMethod("POST");
