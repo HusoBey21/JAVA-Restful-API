@@ -15,14 +15,15 @@
 		
 	</welcome-file-list>
      
+	 
 	<servlet>
-		<servlet-name>Jersey Web Application</servlet-name>
-		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-       <servlet-mapping>
-		<servlet-name>Jersey Web Application</servlet-name>
-		<url-pattern>/crunchify/*</url-pattern>
-	</servlet-mapping>
+    <servlet-name>SunucuKisi</servlet-name>
+    <servlet-class>com.mycompany.huseyincansimsek.SunucuKisi</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SunucuKisi</servlet-name>
+    <url-pattern>/SunucuKisi</url-pattern>
+  </servlet-mapping>
 
 </web-app>
