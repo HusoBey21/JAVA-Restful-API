@@ -16,7 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-public class dogrulama {
+public class dogrulama extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String authHeader = request.getHeader("authorization");
 		String encodedAuth = authHeader.substring(authHeader.indexOf(' ')+1);
