@@ -51,6 +51,12 @@ public class SunucuKisi extends HttpServlet{
         String sifre=request.getParameter("Şifre");
         String dogumYili=request.getParameter("Doğum Yılı");
         DataStore a =new DataStore();
-       a.settKisi(new kisi(ad,kullaniciAdi,eposta,sifre,dogumYili));
+       kisi b=new kisi();
+        b.setAd(ad);
+        b.setKullaniciAdi(kullaniciAdi);
+        b.setEposta(eposta);
+        b.setSifre(sifre);
+        b.setdogumYili(dogumYili);
+        a.setKisi(b);
     }
 }
